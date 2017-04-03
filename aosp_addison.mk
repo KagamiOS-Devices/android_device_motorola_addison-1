@@ -12,19 +12,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/motorola/addison/full_addison.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+$(call inherit-product-if-exists, vendor/gapps/arm-phone-gapps.mk)
+
+$(call inherit-product, device/motorola/addison/device.mk)
+
+$(call inherit-product-if-exists, vendor/motorola/addison/addison-vendor.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
+
 PRODUCT_DEVICE := addison
-PRODUCT_NAME := lineage_addison
+PRODUCT_NAME := addison
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
+BOARD_VENDOR := Motorola
+PRODUCT_MODEL := Moto Z Play
+TARGET_VENDOR := Motorola
+
+PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
+export WITH_GAPPS=true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_FINGERPRINT=motorola/addison/addison:7.0/NPN25.137-24-1/1:user/release-keys \

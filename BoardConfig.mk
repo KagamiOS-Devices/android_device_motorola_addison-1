@@ -44,7 +44,7 @@ TARGET_INIT_VENDOR_LIB := libinit_addison
 TARGET_RECOVERY_DEVICE_MODULES := libinit_addison
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_LZ4C_DT := true
@@ -121,14 +121,15 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4294967296    #  4194304 * 1024 mmcblk0p53
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 25614597120 # 25014255 * 1024 mmcblk0p54
 
 # Power
-TARGET_POWERHAL_VARIANT := qcom
+#TARGET_POWERHAL_VARIANT := qcom
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
 # Radio
-BOARD_PROVIDES_LIBRIL := true
-BOARD_PROVIDES_RILD := true
+#BOARD_PROVIDES_LIBRIL := true
+#BOARD_PROVIDES_RILD := true
+PROTOBUF_SUPPORTED := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
