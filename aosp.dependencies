@@ -1,11 +1,9 @@
 [
   {
+    "remote": "github",
     "repository":  "android_kernel_motorola_msm8953",
-    "target_path": "kernel/motorola/msm8953"
-  },
-  {
-    "repository": "android_device_qcom_common",
-    "target_path": "device/qcom/common"
+    "target_path": "kernel/motorola/msm8953",
+    "branch": "cm-14.1"
   },
   {
     "repository": "android_packages_resources_devicesettings",
